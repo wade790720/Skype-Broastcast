@@ -1,0 +1,35 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+
+<head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+    .popup-block {
+        width: 245px;
+        padding: 20px;
+        font-size: 18px;
+    }
+    </style>
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/popup.js"></script>
+    <script id="content-runtime" type="x-runtime">
+        var text = "{text}"; var chat = document.getElementById("chatInputAreaWithQuotes"); var changeEvent = new Event('change'); chat.value = text; chat.dispatchEvent(changeEvent);
+    </script>
+</head>
+
+<body>
+    <div class="popup-block">歡迎使用Skype Broadcast Tool</div>
+</body>
+
+</html>
